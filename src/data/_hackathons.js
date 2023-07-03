@@ -1,8 +1,9 @@
 export const events = [
 	{
+		id: 1,
 		date: "2023-04-15",
 		time: "10:00",
-		name: "Linode",
+		name: "Linode Hackathon",
 		venue: "Online",
 		hosts: [
 			{
@@ -16,11 +17,11 @@ export const events = [
 		],
 		sponsors: [
 			{
-				name: "ABC Company",
+				name: "Linode",
 				website: "https://www.abc.com/",
 			},
 			{
-				name: "XYZ Inc.",
+				name: "Protean Inc",
 				website: "https://www.xyz.com/",
 			},
 		],
@@ -63,9 +64,10 @@ export const events = [
 	},
 
 	{
+		id: 2,
 		date: "2023-04-15",
 		time: "10:00",
-		name: "Spring Fair",
+		name: "Eight2Five Hub",
 		venue: "Central Park",
 		hosts: [
 			{
@@ -107,6 +109,7 @@ export const events = [
 	},
 
 	{
+		id: 3,
 		date: "2023-05-15",
 		time: "19:00",
 		name: "Spring Music Festival",
