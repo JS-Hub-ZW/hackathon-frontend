@@ -11,19 +11,19 @@ export default function Home() {
 		<>
 			<Head>
 				<title>Hackathon Board</title>
-				<meta name="description" content="Bridging the gap between worlds." />
+				<meta name="description" content="" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" type="image/x-icon" href="/favicon.ico?v=1" />
 			</Head>
-			<header className="py-3 shadow-2xl bg-white">
+			<header className="w-full fixed z-50 py-3 shadow-2xl bg-white">
 				<div className=" container mx-auto">
 					<Link href={`/`} className="text-xl font-semibold">
 						Hackathon Board
 					</Link>
 				</div>
 			</header>
-			<main className="container py-16 mx-auto px-8 border">
-				<div className="grid grid-cols-3 cd gap-8">
+			<main className="container pt-24 pb-16 mx-auto px-8 ">
+				<div className="grid md:grid-cols-3 gap-8">
 					{events.map((event) => (
 						<Link
 							href={`/hackathons/${event.id}`}
@@ -38,24 +38,33 @@ export default function Home() {
 							/>
 
 							<div className="mt-4 flex items-center justify-between">
-								<h3 className="text-lg font-semibold ">{event.name}</h3>
+								<h3 className="text-xl font-semibold ">{event.name}</h3>
 								<p className=" text-blue-700 font-bold ">{event.admission}</p>
 							</div>
 
-							<p className="text-slate-600 tracking-wider uppercase text-sm">
+							<p className="text-slate-700 tracking-wider uppercase text-sm">
 								{event.venue}
 							</p>
+
+							<p className="text-slate-600 mt-4 text-center text-lg">
+								{formatDate(event.date)}
+							</p>
+
 							{/* <div className="flex items-center justify-between">
 								<p className="rounded-2xl text-xs bg-blue-600 p-2 text-blue-50">
 									{formatDate(event.date)}
 								</p>
 							</div> */}
-							<div className="mt-3 text-slate-700 flex gap-4">
-								{event.sponsors.map((sponsor) => (
-									<h4 key={sponsor.name} className="text-sm">
-										{sponsor.name}
-									</h4>
-								))}
+							{/* <p>{event.type}</p> */}
+							<div className="mt-4">
+								<h3 className="text-xs font-bold text-slate-800 ">Sponsors:</h3>
+								<div className="flex gap-3 text-slate-600">
+									{event.sponsors.map((sponsor) => (
+										<p key={sponsor.name} className="text-sm">
+											{sponsor.name}
+										</p>
+									))}
+								</div>
 							</div>
 						</Link>
 					))}
